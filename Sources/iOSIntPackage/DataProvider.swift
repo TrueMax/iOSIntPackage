@@ -9,8 +9,14 @@ import Foundation
 
 public final class DataProvider {
     
-    public func fetchPersonData(student: String) -> String {
+    private let student: String
     
-        return "Здравствуйте, \(student)! Вот ваш бутерброд!"
+    public init(student name: String) {
+        self.student = name
+    }
+    
+    public func fetchPersonData() -> String {
+        
+        return "Здравствуйте, \(student)! Вот ваш бутерброд!" + iOSIntPackage().text
     }
 }
