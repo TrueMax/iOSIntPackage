@@ -5,7 +5,7 @@
 //  Created by Maxim on 2020. 10. 12..
 //
 
-import Foundation
+import UIKit
 
 public final class DataProvider {
     
@@ -18,5 +18,13 @@ public final class DataProvider {
     public func fetchPersonData() -> String {
         
         return "Здравствуйте, \(student)! Вот ваш бутерброд!" + iOSIntPackage().text
+    }
+    
+    public func fetchImage() -> UIImage {
+        return UIImage(
+            named: "checkmark",
+            in: Bundle(for: DataProvider.self),
+            compatibleWith: nil
+        )!
     }
 }
