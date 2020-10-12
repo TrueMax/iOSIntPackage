@@ -1,4 +1,4 @@
 struct iOSIntPackage {
-    var text = "Hello, World!"
+    var text = "Hello, Citizen!"
     var provider = DataProvider()
 }
