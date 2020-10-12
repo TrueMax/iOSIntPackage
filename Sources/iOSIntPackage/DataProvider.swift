@@ -7,9 +7,10 @@
 
 import Foundation
 
-final class DataProvider {
+public final class DataProvider {
     
-    func fetchPersonData(student: String) -> String {
-        "Здравствуйте, \(student)! Вот ваш бутерброд!"
+    public func fetchPersonData(student: String) -> String {
+    
+        return "Здравствуйте, \(student)! Вот ваш бутерброд!"
     }
 }
