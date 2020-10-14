@@ -7,7 +7,11 @@
 
 import UIKit
 
+// MARK: - DataProvider
+
 public final class DataProvider {
+    
+    // MARK: - Private properties
     
     private let student: String
     
@@ -23,8 +27,14 @@ public final class DataProvider {
     public func fetchImage() -> UIImage {
         return UIImage(
             named: "checkmark",
-            in: Bundle(for: DataProvider.self),
+            in: Bundle.module,
             compatibleWith: nil
         )!
     }
+}
+
+// MARK: - Extension
+
+extension UIViewController {
+    
 }
