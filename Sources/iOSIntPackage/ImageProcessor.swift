@@ -11,6 +11,8 @@ import UIKit
 
 public struct ImageProcessor {
     
+    public init() {}
+    
     public func processImage(
         sourceImage: UIImage,
         filter: ColorFilter,
