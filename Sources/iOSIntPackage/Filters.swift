@@ -9,7 +9,21 @@
 
 import UIKit
 
-public enum ColorFilter {
+public enum ColorFilter: CaseIterable {
+    
+    public static var allCases: [ColorFilter] {
+        return [.posterize, .colorInvert, .transfer, .noir, .tonal, .process, .chrome, .fade,
+                .gaussianBlur(radius: 1.0),
+                .motionBlur(radius: 1.0),
+                .monochrome(color: CIColor.init(red: 0/255, green: 0/255, blue: 0/255),
+                            intensity: 1.0),
+                .sepia(intensity: 1.0),
+                .crystallize(radius: 1.0),
+                .bloom(intensity: 1.0),
+                .vignette(intensity: 1.0,
+                          radius: 1.0)
+        ]
+    }
     
     static let imageKey = kCIInputImageKey
     static let radiusKey = kCIInputRadiusKey
