@@ -9,21 +9,22 @@
 
 import UIKit
 
-public struct Images {
+public enum Images: String, CaseIterable {
     
-    public static var checkmark: UIImage {
-        return getPdfImage(by: "checkmark")
+    case checkmark
+    case sunset
+    case mountain
+    case annecy
+    case annecy2
+    case skyscraper
+    case avatar
+    case cafe
+    
+    public func image(name: Images) -> UIImage {
+        return getPdfImage(by: name.rawValue)
     }
     
-    public static var sunset: UIImage {
-        return getPdfImage(by: "sunset")
-    }
-    
-    public static var mountain: UIImage {
-        return getPdfImage(by: "mountain")
-    }
-    
-    private static func getPdfImage(by name: String) -> UIImage {
+    private func getPdfImage(by name: String) -> UIImage {
         
         guard let image = UIImage(
                 named: name,
