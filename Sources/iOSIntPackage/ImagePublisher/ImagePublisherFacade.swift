@@ -15,6 +15,8 @@ final public class ImagePublisherFacade {
     
     private let publisher = ImagePublisher()
     
+    public init() {}
+    
     // добавляет подписчика
     
     public func subscribe(_ subscriber: ImageLibrarySubscriber) {
