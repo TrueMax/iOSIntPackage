@@ -38,7 +38,7 @@ final public class ImagePublisherFacade {
     public func addImagesWithTimer(
         time interval: TimeInterval,
         repeat times: RepeatCount,
-        userImage: UIImage? = nil
+        userImages: [UIImage]? = nil
     ) {
         var count = 0
         Timer.scheduledTimer(
@@ -47,8 +47,9 @@ final public class ImagePublisherFacade {
         ) { [weak self] timer in
             count += 1
             
-            if let image = userImage {
-                self?.publisher.add(image: image)
+            if let images = userImages {
+                guard let randomImage = images.randomElement() else { return }
+                self?.publisher.add(image: randomImage)
             } else {
                 guard let imageCase = Images.allCases.randomElement() else { return }
                 let libraryImage = imageCase.image(name: imageCase)
