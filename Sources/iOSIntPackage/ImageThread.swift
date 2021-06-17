@@ -21,4 +21,8 @@ class ImageThread: Thread {
         super.init()
         super.qualityOfService = qos
     }
+    
+    override func main() {
+        workItem()
+    }
 }
